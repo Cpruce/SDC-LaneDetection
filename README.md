@@ -48,6 +48,8 @@ One potential shortcoming would be what would happen when some object enters int
 
 Another shortcoming could be granularity. These lanes take the form of lines. However, lane "lines" ahead are usually not perfectly aligned with the orientation of the vehicle. Acheiving some flexibility in the "line" would probably really coincide with something like path-planning ;)
 
+Addressing the optional challenge, I believe points being picked up on the left are skewing the lane line. I've tried choosing the furthest left best-fit line out of 3-5 rounds but each `polyfit` was seeded the same. I tried a few window sizes and shuffling. My guess is the most robust approach is random sampling $n$ times to get the true best-fit line (I was going by highest $x1$ value).
+
 
 ### 3. Suggest possible improvements to your pipeline
 
